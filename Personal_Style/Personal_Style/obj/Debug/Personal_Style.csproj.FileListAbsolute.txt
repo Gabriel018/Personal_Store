@@ -1,0 +1,7 @@
+C:\Users\Usuario\Desktop\Personal_Store\Personal_Style\Personal_Style\bin\Debug\Personal_Style.exe.config
+C:\Users\Usuario\Desktop\Personal_Store\Personal_Style\Personal_Style\bin\Debug\Personal_Style.exe
+C:\Users\Usuario\Desktop\Personal_Store\Personal_Style\Personal_Style\bin\Debug\Personal_Style.pdb
+C:\Users\Usuario\Desktop\Personal_Store\Personal_Style\Personal_Style\obj\Debug\Personal_Style.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\Personal_Store\Personal_Style\Personal_Style\obj\Debug\Personal_Style.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\Personal_Store\Personal_Style\Personal_Style\obj\Debug\Personal_Style.exe
+C:\Users\Usuario\Desktop\Personal_Store\Personal_Style\Personal_Style\obj\Debug\Personal_Style.pdb
