@@ -16,12 +16,11 @@ namespace Personal_Style
             string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
-            Console.WriteLine("Conectado com sucesso");
-            Console.WriteLine("digite seu nome");
+            Console.WriteLine("digite  o  nome");
             string nome_add = Console.ReadLine();
-            Console.WriteLine("Digite seu CPF");
+            Console.WriteLine("Digite CPF  sem espaços ou traços ");
             int cpf_add = int.Parse(Console.ReadLine());
-            Console.WriteLine("digite seu telefone");
+            Console.WriteLine("digite  o  telefone sem espaços ou traços ");
             int telefone_add = int.Parse(Console.ReadLine());
             string add_diretor = "INSERT INTO diretor(nome,cpf,telefone) " +
               "values('" + nome_add + "','" + cpf_add + "','" + telefone_add + "')";
@@ -95,8 +94,8 @@ namespace Personal_Style
             string update_query = "UPDATE diretor SET nome = '" + nome + "', cpf = " + cpf + ", telefone = " + telefone + " WHERE  id = " + id + " ";
             SqlCommand updat_command = new SqlCommand(update_query, sqlConnection);
             updat_command.ExecuteNonQuery();
-
-
+            Console.WriteLine("Dados alterados");
+            Console.WriteLine("");
             Console.WriteLine(" 1) voltar ao  Menu Diretor\t  2) Voltar ao  Menu Inicial");
             int n = int.Parse(Console.ReadLine());
 

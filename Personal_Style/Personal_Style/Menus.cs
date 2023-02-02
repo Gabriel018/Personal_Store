@@ -52,9 +52,9 @@ namespace Personal_Style
             Cliente cliente = new Cliente();
 
 
-            Console.WriteLine("=================================");
-            Console.WriteLine("           Menu Cliente          ");
-            Console.WriteLine("=================================");
+            Console.WriteLine("================================================================");
+            Console.WriteLine("           Menu Cliente                                         ");
+            Console.WriteLine("================================================================");
             Console.WriteLine("1) Cadastrar\t 2) Editar\t  3) Exluir\t  4) Visualizar ");
             Console.WriteLine("");
             Console.WriteLine("Digite o número da opção desejada: ");
@@ -64,7 +64,7 @@ namespace Personal_Style
             {
 
                 case 1:
-
+                    
                     cliente.Salvar_Cliente();
                     break;
                 case 2:
@@ -90,9 +90,9 @@ namespace Personal_Style
             Vendedor vendedor = new Vendedor();
 
 
-            Console.WriteLine("=================================");
-            Console.WriteLine("           Menu Vendedor        ");
-            Console.WriteLine("=================================");
+            Console.WriteLine("================================================================");
+            Console.WriteLine("           Menu Vendedor                                       ");
+            Console.WriteLine("================================================================");
             Console.WriteLine("1) Cadastrar\t 2) Editar\t  3) Exluir\t  4) Visualizar ");
             Console.WriteLine("");
             Console.WriteLine("Digite o número da opção desejada: ");

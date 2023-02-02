@@ -17,16 +17,15 @@ namespace Personal_Style
             string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
-            Console.WriteLine("Conectado com sucesso");
             Console.WriteLine("digite seu nome");
             string nome_add = Console.ReadLine();
             Console.WriteLine("Digite seu CPF");
             int cpf_add = int.Parse(Console.ReadLine());
             Console.WriteLine("digite seu telefone");
             int telefone_add = int.Parse(Console.ReadLine());
-            Console.WriteLine("descreve seu estilo");
+            Console.WriteLine("descreve seu estilo ");
             string descricao_add = (Console.ReadLine());
-            Console.WriteLine("escolha sua categoria");
+            Console.WriteLine("digite uma dos estilos :  casual: exentrico: esportivo: criativo: urbano ");
             string categoria_add = (Console.ReadLine());
 
 
