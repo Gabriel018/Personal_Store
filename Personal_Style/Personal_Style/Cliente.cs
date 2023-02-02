@@ -8,10 +8,6 @@ namespace Personal_Style
 {
     class Cliente
     {
-        string nome;
-        int cpf;
-        int telefone;
-        string descricao;
-        string categoria;
+        
     }
 }

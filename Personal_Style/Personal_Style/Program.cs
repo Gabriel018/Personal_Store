@@ -7,74 +7,49 @@ using System.Data.SqlClient;
 
 namespace Personal_Style
 {
-    class Program
+      public class Program
     {
         static void Main(string[] args)
         {
             SqlConnection sqlConnection;
-            string conex = @"Data Source=DUKE\SQLEXPRESS;Integrated Security=True";
+            string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
             try
             {
                 sqlConnection = new SqlConnection(conex);
                 sqlConnection.Open();
                 Console.WriteLine("Conectado com sucesso");
 
-                // Add ao banco
-                //Console.WriteLine("Digite seu nome");
-                //string nome_add = Console.ReadLine();
-                //Console.WriteLine("Digite seu cpf");
-                //int cpf_add = int.Parse(Console.ReadLine());
-                //Console.WriteLine("Digite o telefone");
-                //int telefone_add = int.Parse(Console.ReadLine());
-                //string add_diretor = "INSERT INTO diretor(nome,cpf,telefone) " +
-                //    "VALUES('" + nome_add + "','" + cpf_add + "','" + telefone_add + "')";
-                //SqlCommand salvar_dados = new SqlCommand(add_diretor, sqlConnection);
-                //salvar_dados.ExecuteNonQuery();
-                //Console.WriteLine("Dados salvos ");
+                Diretor dir = new Diretor();
 
+                Menus menu = new Menus();
 
+                Console.WriteLine("=================================");
+                Console.WriteLine(" bem vindo sistema Personal_style");
+                Console.WriteLine("=================================");
+                Console.WriteLine("1) Cadastrar diretor\t 2) Cadastrar vendedor\t  3) Cadastrar cliente\t  4) relatorio de math  ");
+                Console.WriteLine("");
+                Console.WriteLine("Digite o número da opção desejada: ");
+                int menuOption = Convert.ToInt32(Console.ReadLine());
 
-                //visualizar
-                //string selecionar = "SELECT * FROM diretor;";
-                //SqlCommand visualizar  = new SqlCommand(selecionar, sqlConnection);
-                //SqlDataReader dataReader= visualizar.ExecuteReader();
+                switch (menuOption)
+                {
 
-                //while(dataReader.Read())
-                //{
-                //    Console.WriteLine("nome:," + dataReader.GetValue(1).ToString());
-                //    Console.WriteLine("cpf:," + dataReader.GetValue(2).ToString());
-                //    Console.WriteLine("Telefone:," + dataReader.GetValue(3).ToString());
-                //    Console.ReadLine();
-                //}
-                //dataReader.Close();
+                    case 1:
+                        Console.Clear();
 
-
-
-                //UPDATE
-                //Console.WriteLine("Digite o id para alteraraço");
-                //int id = int.Parse(Console.ReadLine());
-                //Console.WriteLine("digte o nome a ser alterado");
-                //string nome = Console.ReadLine();
-                //Console.WriteLine("digte o cpf a ser alterado");
-                //int cpf = int.Parse(Console.ReadLine());
-                //Console.WriteLine("digte o telefone a ser alterado");
-                //int telefone = int.Parse(Console.ReadLine());
-
-
-                //string update_query = "UPDATE diretor SET nome = '" + nome + "', cpf = " + cpf + ", telefone = " + telefone + " WHERE  id = " + id + " ";
-                //SqlCommand updat_command = new SqlCommand(update_query, sqlConnection);
-                //updat_command.ExecuteNonQuery();
-
-                Console.WriteLine("Digite o id a ser excluido");
-               int  id = int.Parse(Console.ReadLine());
-
-                string deleteQuery = "DELETE FROM diretor WHERE  id= "+id+"";
-               SqlCommand  deletecmd = new SqlCommand(deleteQuery,sqlConnection);
-                deletecmd.ExecuteNonQuery();
-
+                        menu.Menu_diretor();
+                        break;
+                    case 2:
+                       
+                        break;
+                    case 3:
+                        
+                        break;
+                    case 4:
+                        Console.WriteLine("Voce nao possui a opçao Premium");
+                        break;
+                }
             }
-
-
 
             catch (Exception e)
             {
@@ -83,8 +58,8 @@ namespace Personal_Style
 
             }
 
+            Console.ReadLine();
 
-            
         }
     }
 }
