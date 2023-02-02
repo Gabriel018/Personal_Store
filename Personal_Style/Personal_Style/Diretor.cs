@@ -60,8 +60,6 @@ namespace Personal_Style
          
             }
        
-
-
             Console.WriteLine(" 1) voltar ao  Menu Diretor\t  2) Voltar ao  Menu Inicial");
             int n = int.Parse(Console.ReadLine());
 
@@ -76,7 +74,6 @@ namespace Personal_Style
 
             }
         }
-
 
         public void editar()
         {
