@@ -35,7 +35,14 @@ namespace Personal_Style
                 Console.WriteLine("Digite o número da opção desejada: ");
                 int menuOption = Convert.ToInt32(Console.ReadLine());
 
-                switch (menuOption)
+
+                if (menuOption < 1 || menuOption > 4)
+                {
+                    Console.WriteLine("Opção Inválida!");
+                }
+                else
+
+                    switch (menuOption)
                 {
 
                     case 1:

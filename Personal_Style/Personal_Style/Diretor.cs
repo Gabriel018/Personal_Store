@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
+
 namespace Personal_Style
 {
      public  class Diretor
@@ -18,10 +20,26 @@ namespace Personal_Style
             sqlConnection.Open();
             Console.WriteLine("digite  o  nome");
             string nome_add = Console.ReadLine();
+            if (string.IsNullOrEmpty(nome_add))
+            {
+                Console.WriteLine("Nome inválido. Por favor, tente novamente.");
+            }
+            if (string.IsNullOrWhiteSpace(nome_add))
+            {
+                Console.WriteLine("Não é permitido inserir um número no campo nome!");
+            }
             Console.WriteLine("Digite CPF  sem espaços ou traços ");
             string cpf_add = (Console.ReadLine());
+            if (string.IsNullOrEmpty(cpf_add))
+            {
+                Console.WriteLine("cpf inválido. Por favor, tente novamente.");
+            }
             Console.WriteLine("digite  o  telefone sem espaços ou traços ");
             string telefone_add = (Console.ReadLine());
+            if (string.IsNullOrEmpty(telefone_add))
+            {
+                Console.WriteLine("Telefone inválido. Por favor, tente novamente.");
+            }
             string add_diretor = "INSERT INTO diretor(nome,cpf,telefone) " +
               "values('" + nome_add + "','" + cpf_add + "','" + telefone_add + "')";
             SqlCommand salvar_dados = new SqlCommand(add_diretor, sqlConnection);
@@ -30,7 +48,13 @@ namespace Personal_Style
             Console.WriteLine(" 1) voltar ao  Menu Diretor\t  2) Voltar ao  Menu Inicial");
             int n =  int.Parse(Console.ReadLine());
 
-            if (n == 1)
+            if ( n < 1 || n > 4)
+            {
+                Console.WriteLine("Opção Inválida!");
+            }
+            else
+
+        if (n == 1)
             {
                 Console.Clear();
                 menu.Menu_diretor();
@@ -63,6 +87,13 @@ namespace Personal_Style
             Console.WriteLine(" 1) voltar ao  Menu Diretor\t  2) Voltar ao Menu inicial");
             int n = int.Parse(Console.ReadLine());
 
+
+            if (n < 1 || n > 4)
+            {
+                Console.WriteLine("Opção Inválida!");
+            }
+            else
+
             if (n == 1)
             {
                 Console.Clear();
@@ -89,8 +120,17 @@ namespace Personal_Style
             Console.WriteLine("digte o nome a ser alterado");
             string nome = Console.ReadLine();
             Console.WriteLine("digte o cpf a ser alterado");
+            if (string.IsNullOrEmpty(nome))
+            {
+                Console.WriteLine("Nome inválido. Por favor, tente novamente.");
+            }
             string cpf = (Console.ReadLine());
             Console.WriteLine("digte o telefone a ser alterado");
+            if (string.IsNullOrEmpty(cpf))
+            {
+                Console.WriteLine("Cpf inválido. Por favor, tente novamente.");
+            }
+
             string telefone = (Console.ReadLine());
 
 
@@ -101,6 +141,14 @@ namespace Personal_Style
             Console.WriteLine("");
             Console.WriteLine(" 1) voltar ao  Menu Diretor\t  2) Voltar ao  Menu Inicial");
             int n = int.Parse(Console.ReadLine());
+
+
+
+            if (n < 1 || n > 4)
+            {
+                Console.WriteLine("Opção Inválida!");
+            }
+            else
 
             if (n == 1)
             {
@@ -132,6 +180,13 @@ namespace Personal_Style
 
                 Console.WriteLine(" 1) voltar ao  Menu Diretor\t  2) Voltar ao  Menu Inicial");
                 int n = int.Parse(Console.ReadLine());
+
+
+                if (n < 1 || n > 4)
+                {
+                    Console.WriteLine("Opção Inválida!");
+                }
+                else
 
                 if (n == 1)
                 {

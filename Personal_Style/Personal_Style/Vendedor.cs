@@ -38,6 +38,13 @@ namespace Personal_Style
             Console.WriteLine(" 1) voltar ao  Menu Diretor\t  2) Voltar ao  Menu Inicial");
             int n = int.Parse(Console.ReadLine());
 
+
+            if (n < 1 || n > 4)
+            {
+                Console.WriteLine("Opção Inválida!");
+            }
+            else
+
             if (n == 1)
             {
                 Console.Clear();
@@ -81,6 +88,13 @@ namespace Personal_Style
             Console.WriteLine(" 1) voltar ao  Menu Vendedor\t  2) Voltar ao  Menu Inicial");
             int n = int.Parse(Console.ReadLine());
 
+
+            if (n < 1 || n > 4)
+            {
+                Console.WriteLine("Opção Inválida!");
+            }
+            else
+
             if (n == 1)
             {
                 Console.Clear();
@@ -119,6 +133,13 @@ namespace Personal_Style
             Console.WriteLine(" 1) voltar ao  Menu Vendedor\t  2) Voltar ao  Menu Inicial");
             int n = int.Parse(Console.ReadLine());
 
+
+            if (n < 1 || n > 4)
+            {
+                Console.WriteLine("Opção Inválida!");
+            }
+            else
+
             if (n == 1)
             {
                 Console.Clear();
@@ -152,6 +173,13 @@ namespace Personal_Style
 
                 Console.WriteLine(" 1) voltar ao  Menu Diretor\t  2) Voltar ao  Menu Inicial");
                 int n = int.Parse(Console.ReadLine());
+
+
+                if (n < 1 || n > 4)
+                {
+                    Console.WriteLine("Opção Inválida!");
+                }
+                else
 
                 if (n == 1)
                 {
