@@ -13,15 +13,15 @@ namespace Personal_Style
         {
             Menus menu = new Menus();
             SqlConnection sqlConnection;
-            string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+            string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
             Console.WriteLine("digite  o  nome");
             string nome_add = Console.ReadLine();
             Console.WriteLine("Digite CPF  sem espaços ou traços ");
-            int cpf_add = int.Parse(Console.ReadLine());
+            string cpf_add = (Console.ReadLine());
             Console.WriteLine("digite  o  telefone sem espaços ou traços ");
-            int telefone_add = int.Parse(Console.ReadLine());
+            string telefone_add = (Console.ReadLine());
             string add_diretor = "INSERT INTO diretor(nome,cpf,telefone) " +
               "values('" + nome_add + "','" + cpf_add + "','" + telefone_add + "')";
             SqlCommand salvar_dados = new SqlCommand(add_diretor, sqlConnection);
@@ -46,7 +46,7 @@ namespace Personal_Style
         {
             Menus menu = new Menus();
             SqlConnection sqlConnection;
-            string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+            string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
             string selecionar = "SELECT * FROM diretor;";
@@ -78,7 +78,7 @@ namespace Personal_Style
         {
             Menus menu = new Menus();
             SqlConnection sqlConnection;
-            string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+            string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
             Console.WriteLine("Digite o id para alteraraço");
@@ -116,7 +116,7 @@ namespace Personal_Style
             {
                 Menus menu = new Menus();
                 SqlConnection sqlConnection;
-                string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+                string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
                 sqlConnection = new SqlConnection(conex);
                 sqlConnection.Open();
                 Console.WriteLine("Digite o id a ser excluido");

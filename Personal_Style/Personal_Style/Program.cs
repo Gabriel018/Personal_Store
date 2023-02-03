@@ -12,11 +12,12 @@ namespace Personal_Style
         static void Main(string[] args)
         {
             SqlConnection sqlConnection;
-            string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+
+             string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
             try
             {
                 sqlConnection = new SqlConnection(conex);
-                sqlConnection.Open();
+               sqlConnection.Open();
                 
                 Diretor dir = new Diretor();
 

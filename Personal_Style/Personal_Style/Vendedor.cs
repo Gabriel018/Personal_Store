@@ -14,15 +14,15 @@ namespace Personal_Style
         {
             Menus menu = new Menus();
             SqlConnection sqlConnection;
-            string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+            string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
             Console.WriteLine("digite seu nome");
             string nome_add = Console.ReadLine();
             Console.WriteLine("Digite seu CPF");
-            int cpf_add = int.Parse(Console.ReadLine());
+            string cpf_add = (Console.ReadLine());
             Console.WriteLine("digite seu telefone");
-            int telefone_add = int.Parse(Console.ReadLine());
+            string telefone_add = (Console.ReadLine());
             Console.WriteLine("descreve seu estilo ");
             string descricao_add = (Console.ReadLine());
             Console.WriteLine("digite uma dos estilos :  casual: exentrico: esportivo: criativo: urbano ");
@@ -55,7 +55,7 @@ namespace Personal_Style
         {
             Menus menu = new Menus();
             SqlConnection sqlConnection;
-            string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+            string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
             Console.WriteLine("Digite o id para alteraraço");
@@ -63,9 +63,9 @@ namespace Personal_Style
             Console.WriteLine("digte o nome a ser alterado");
             string nome = Console.ReadLine();
             Console.WriteLine("digte o cpf a ser alterado");
-            int cpf = int.Parse(Console.ReadLine());
+            string cpf = (Console.ReadLine());
             Console.WriteLine("digite o telefone a ser alterado");
-            int telefone = int.Parse(Console.ReadLine());
+            string telefone = (Console.ReadLine());
             Console.WriteLine("digite a descriçao a ser alterada");
             string descricao_add = (Console.ReadLine());
             Console.WriteLine("escolha sua categoria");
@@ -96,7 +96,7 @@ namespace Personal_Style
         {
             Menus menu = new Menus();
             SqlConnection sqlConnection;
-            string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+            string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
             string selecionar = "SELECT * FROM vendedor";
@@ -111,7 +111,7 @@ namespace Personal_Style
 
             }
 
-            Console.WriteLine(" 1) voltar ao  Menu Diretor\t  2) Voltar ao  Menu Inicial");
+            Console.WriteLine(" 1) voltar ao  Menu Vendedor\t  2) Voltar ao  Menu Inicial");
             int n = int.Parse(Console.ReadLine());
 
             if (n == 1)
@@ -134,7 +134,7 @@ namespace Personal_Style
             {
                 Menus menu = new Menus();
                 SqlConnection sqlConnection;
-                string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+                string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
                 sqlConnection = new SqlConnection(conex);
                 sqlConnection.Open();
                 Console.WriteLine("Digite o id a ser excluido");

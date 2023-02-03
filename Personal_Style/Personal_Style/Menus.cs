@@ -68,11 +68,11 @@ namespace Personal_Style
                     cliente.Salvar_Cliente();
                     break;
                 case 2:
-                    
+                    cliente.editar_cliente();
 
                     break;
                 case 3:
-                    
+                    cliente.exluir_cliente();
                     break;
                 case 4:
                     cliente.visualizar_cliente();
