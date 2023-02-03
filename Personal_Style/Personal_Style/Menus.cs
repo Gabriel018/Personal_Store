@@ -19,7 +19,7 @@ namespace Personal_Style
             Console.WriteLine("=================================");
             Console.WriteLine("           Menu Diretor          ");
             Console.WriteLine("=================================");
-            Console.WriteLine("1) Cadastrar\t 2) Editar\t  3) Exluir\t  4) Visualizar ");
+            Console.WriteLine("1) Cadastrar\t 2) Editar\t  3) Excluir\t  4) Visualizar ");
             Console.WriteLine("");
             Console.WriteLine("Digite o número da opção desejada: ");
             int menuOption = Convert.ToInt32(Console.ReadLine());
@@ -65,7 +65,7 @@ namespace Personal_Style
             Console.WriteLine("================================================================");
             Console.WriteLine("           Menu Cliente                                         ");
             Console.WriteLine("================================================================");
-            Console.WriteLine("1) Cadastrar\t 2) Editar\t  3) Exluir\t  4) Visualizar ");
+            Console.WriteLine("1) Cadastrar\t 2) Editar\t  3) Excluir\t  4) Visualizar ");
             Console.WriteLine("");
             Console.WriteLine("Digite o número da opção desejada: ");
             int menuOption = Convert.ToInt32(Console.ReadLine());
@@ -110,7 +110,7 @@ namespace Personal_Style
             Console.WriteLine("================================================================");
             Console.WriteLine("           Menu Vendedor                                       ");
             Console.WriteLine("================================================================");
-            Console.WriteLine("1) Cadastrar\t 2) Editar\t  3) Exluir\t  4) Visualizar ");
+            Console.WriteLine("1) Cadastrar\t 2) Editar\t  3) Excluir\t  4) Visualizar ");
             Console.WriteLine("");
             Console.WriteLine("Digite o número da opção desejada: ");
             int menuOption = Convert.ToInt32(Console.ReadLine());

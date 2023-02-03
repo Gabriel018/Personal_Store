@@ -19,15 +19,17 @@ namespace Personal_Style
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
             Console.WriteLine("digite  o  nome");
+
             string nome_add = Console.ReadLine();
             if (string.IsNullOrEmpty(nome_add))
             {
                 Console.WriteLine("Nome inválido. Por favor, tente novamente.");
             }
-            if (string.IsNullOrWhiteSpace(nome_add))
+            if (int.TryParse(nome_add, out int number))
             {
-                Console.WriteLine("Não é permitido inserir um número no campo nome!");
+                Console.WriteLine("Valor digitado invalido");
             }
+
             Console.WriteLine("Digite CPF  sem espaços ou traços ");
             string cpf_add = (Console.ReadLine());
             if (string.IsNullOrEmpty(cpf_add))
@@ -56,12 +58,20 @@ namespace Personal_Style
 
         if (n == 1)
             {
+                for (int i = 0; i < 10; i++)
+                {
+                    System.Threading.Thread.Sleep(80);
+                }
                 Console.Clear();
                 menu.Menu_diretor();
             }
 
             if(n == 2)
             {
+                for (int i = 0; i < 10; i++)
+                {
+                    System.Threading.Thread.Sleep(80);
+                }
                 Console.Clear();
                 Program.Main();
             }
@@ -96,6 +106,10 @@ namespace Personal_Style
 
             if (n == 1)
             {
+                for (int i = 0; i < 10; i++)
+                {
+                    System.Threading.Thread.Sleep(80);
+                }
                 Console.Clear();
                 menu.Menu_diretor();
             }
@@ -103,6 +117,10 @@ namespace Personal_Style
 
             if (n == 2)
             {
+                for (int i = 0; i < 10; i++)
+                {
+                    System.Threading.Thread.Sleep(80);
+                }
                 Console.Clear();
                 Program.Main();
             }
@@ -117,15 +135,15 @@ namespace Personal_Style
             sqlConnection.Open();
             Console.WriteLine("Digite o id para alteraraço");
             int id = int.Parse(Console.ReadLine());
-            Console.WriteLine("digte o nome a ser alterado");
+            Console.WriteLine("digite o nome a ser alterado");
             string nome = Console.ReadLine();
-            Console.WriteLine("digte o cpf a ser alterado");
+            Console.WriteLine("digite o cpf a ser alterado");
             if (string.IsNullOrEmpty(nome))
             {
                 Console.WriteLine("Nome inválido. Por favor, tente novamente.");
             }
             string cpf = (Console.ReadLine());
-            Console.WriteLine("digte o telefone a ser alterado");
+            Console.WriteLine("digite o telefone a ser alterado");
             if (string.IsNullOrEmpty(cpf))
             {
                 Console.WriteLine("Cpf inválido. Por favor, tente novamente.");
@@ -152,12 +170,20 @@ namespace Personal_Style
 
             if (n == 1)
             {
+                for (int i = 0; i < 10; i++)
+                {
+                    System.Threading.Thread.Sleep(80);
+                }
                 Console.Clear();
                 menu.Menu_diretor();
             }
 
             if (n == 2)
             {
+                for (int i = 0; i < 10; i++)
+                {
+                    System.Threading.Thread.Sleep(80);
+                }
                 Console.Clear();
                 Program.Main();
             }
@@ -171,8 +197,23 @@ namespace Personal_Style
                 string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
                 sqlConnection = new SqlConnection(conex);
                 sqlConnection.Open();
+
+                Console.WriteLine("");
+                Console.WriteLine("");
+                string selecionar = "SELECT * FROM diretor;";
+                SqlCommand visualizar = new SqlCommand(selecionar, sqlConnection);
+                SqlDataReader dataReader = visualizar.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    Console.WriteLine("ID: " + dataReader.GetValue(0).ToString() + "\tNome:" + dataReader.GetValue(1).ToString() + "\tCPF:" + dataReader.GetValue(2).ToString() + "\tTelefone:" + dataReader.GetValue(3).ToString());
+
+                }
+
+                Console.WriteLine("");
                 Console.WriteLine("Digite o id a ser excluido");
                 int id = int.Parse(Console.ReadLine());
+
                 string deleteQuery = "DELETE FROM diretor WHERE  id= " + id + "";
                 SqlCommand deletecmd = new SqlCommand(deleteQuery, sqlConnection);
                 deletecmd.ExecuteNonQuery();
@@ -190,12 +231,20 @@ namespace Personal_Style
 
                 if (n == 1)
                 {
+                    for (int i = 0; i < 10; i++)
+                    {
+                        System.Threading.Thread.Sleep(80);
+                    }
                     Console.Clear();
                     menu.Menu_diretor();
                 }
 
                 if (n == 2)
                 {
+                    for (int i = 0; i < 10; i++)
+                    {
+                        System.Threading.Thread.Sleep(80);
+                    }
                     Console.Clear();
                     Program.Main();
                 }

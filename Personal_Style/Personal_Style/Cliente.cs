@@ -19,16 +19,41 @@ namespace Personal_Style
             sqlConnection.Open();
             Console.WriteLine("digite seu nome");
             string nome_add = Console.ReadLine();
+            if (string.IsNullOrEmpty(nome_add))
+            {
+                Console.WriteLine("nome inválido. Por favor, tente novamente.");
+            }
             Console.WriteLine("Digite seu CPF sem espaços ou traços ");
             string cpf_add = (Console.ReadLine());
+            if (string.IsNullOrEmpty(cpf_add))
+            {
+                Console.WriteLine("cpf inválido. Por favor, tente novamente.");
+            }
             Console.WriteLine("digite seu telefone sem espaços ou traços ");
             string telefone_add = (Console.ReadLine());
+            if (string.IsNullOrEmpty(telefone_add))
+            {
+                Console.WriteLine("telefone inválido. Por favor, tente novamente.");
+            }
             Console.WriteLine("descreve seu estilo");
             string descricao_add = (Console.ReadLine());
+            if (string.IsNullOrEmpty(descricao_add))
+            {
+                Console.WriteLine("descricao inválida. Por favor, tente novamente.");
+            }
             Console.WriteLine("digite uma dos estilos :  casual: exentrico: esportivo: criativo: urbano ");
             string categoria_add = (Console.ReadLine());
+            if (string.IsNullOrEmpty(cpf_add))
+            {
+                Console.WriteLine("cpf inválido. Por favor, tente novamente.");
+            }
+
             Console.WriteLine("qual seu rendimento?");
             decimal rendimento_add = decimal.Parse(Console.ReadLine());
+            if (string.IsNullOrEmpty(cpf_add))
+            {
+                Console.WriteLine("valor inválido. Por favor, tente novamente.");
+            }
 
 
             string add_cliente = "INSERT INTO cliente(nome, cpf, telefone, descricao, categoria, rendimento) " +
@@ -48,13 +73,21 @@ namespace Personal_Style
 
             if (n == 1)
             {
+                for (int i = 0; i < 10; i++)
+                {
+                    System.Threading.Thread.Sleep(80);
+                }
                 Console.Clear();
                 menu.Menu_cliente();
             }
 
-            else
+            if (n == 2)
             {
-
+                for (int i = 0; i < 10; i++)
+                {
+                    System.Threading.Thread.Sleep(80);
+                }
+                Program.Main();
             }
 
         }
@@ -70,18 +103,37 @@ namespace Personal_Style
             int id = int.Parse(Console.ReadLine());
             Console.WriteLine("digte o nome a ser alterado");
             string nome = Console.ReadLine();
+            if (string.IsNullOrEmpty(nome))
+            {
+                Console.WriteLine("nome inválido. Por favor, tente novamente.");
+            }
             Console.WriteLine("digite o cpf a ser alterado");
             string cpf = (Console.ReadLine());
+            if (string.IsNullOrEmpty(cpf))
+            {
+                Console.WriteLine("cpf inválido. Por favor, tente novamente.");
+            }
             Console.WriteLine("digite o telefone a ser alterado");
             string telefone = (Console.ReadLine());
+            if (string.IsNullOrEmpty(telefone))
+            {
+                Console.WriteLine("Telefone inválido. Por favor, tente novamente.");
+            }
             Console.WriteLine("digite a descriçao a ser alterada");
             string descricao_add = (Console.ReadLine());
+            if (string.IsNullOrEmpty(descricao_add))
+            {
+                Console.WriteLine("decriçao inválida. Por favor, tente novamente.");
+            }
             Console.WriteLine("escolha sua categoria");
             string categoria_add = (Console.ReadLine());
+            if (string.IsNullOrEmpty(categoria_add))
+            {
+                Console.WriteLine("cpf inválido. Por favor, tente novamente.");
+            }
             Console.WriteLine("qual seu rendimento?");
             decimal rendimento_add = decimal.Parse(Console.ReadLine());
-
-
+    
             string update_query = "UPDATE cliente SET nome = '" + nome + "', cpf = " + cpf + ", telefone = '" + telefone + "', descricao ='" + descricao_add + "', categoria ='" + categoria_add + "', rendimento =" + rendimento_add + " WHERE  id = " + id + " ";
             SqlCommand updat_command = new SqlCommand(update_query, sqlConnection);
             updat_command.ExecuteNonQuery();
@@ -99,13 +151,22 @@ namespace Personal_Style
 
             if (n == 1)
             {
+                for (int i = 0; i < 10; i++)
+                {
+                    System.Threading.Thread.Sleep(80);
+                }
                 Console.Clear();
                 menu.Menu_cliente();
             }
 
-            else
+            if (n == 2)
             {
+                for (int i = 0; i < 10; i++)
+                {
+                    System.Threading.Thread.Sleep(80);
+                }
 
+                Program.Main();
             }
         }
 
@@ -143,12 +204,20 @@ namespace Personal_Style
 
             if (n == 1)
             {
+                for (int i = 0; i < 10; i++)
+                {
+                    System.Threading.Thread.Sleep(80);
+                }
                 Console.Clear();
                 menu.Menu_cliente();
             }
 
             if (n == 2)
             {
+                for (int i = 0; i < 10; i++)
+                {
+                    System.Threading.Thread.Sleep(80);
+                }
                 Console.Clear();
                 Program.Main();
             }
@@ -181,12 +250,20 @@ namespace Personal_Style
 
                 if (n == 1)
                 {
+                    for (int i = 0; i < 10; i++)
+                    {
+                        System.Threading.Thread.Sleep(80);
+                    }
                     Console.Clear();
                     menu.Menu_cliente();
                 }
 
                 if (n == 2)
                 {
+                    for (int i = 0; i < 10; i++)
+                    {
+                        System.Threading.Thread.Sleep(80);
+                    }
                     Console.Clear();
                     Program.Main();
                 }

@@ -18,19 +18,20 @@ namespace Personal_Style
             try
             {   
 
-
              
                 sqlConnection = new SqlConnection(conex);
                 sqlConnection.Open();
                 
                 Diretor dir = new Diretor();
-
+               
                 Menus menu = new Menus();
-
+                Console.ForegroundColor = ConsoleColor.Cyan;
+               
                 Console.WriteLine("===========================================================================");
-                Console.WriteLine("                   Bem vindo sistema Personal_style                        ");
+                Console.WriteLine("                  BEM VINDO AO PERSONAL STYLE                              ");
                 Console.WriteLine("===========================================================================");
-                Console.WriteLine("1) Menu Diretor \t 2)Menu Vendedor\t3) Menu Cliente \t4) Relatorio de math");
+;
+                Console.WriteLine("1) Menu Diretor \t 2)Menu Vendedor\t3) Menu Cliente \t4) Relatorio de Math");
                 Console.WriteLine("");
                 Console.WriteLine("Digite o número da opção desejada: ");
                 int menuOption = Convert.ToInt32(Console.ReadLine());
@@ -46,20 +47,40 @@ namespace Personal_Style
                 {
 
                     case 1:
-                        Console.Clear();
-
-                        menu.Menu_diretor();
+                        
+                            for (int i = 0; i < 10; i++)
+                            {
+                               
+                                System.Threading.Thread.Sleep(100);
+                            }
+                            Console.Clear();
+                            menu.Menu_diretor();
                         break;
                     case 2:
-                        Console.Clear();
+                            for (int i = 0; i < 10; i++)
+                            {
+                                Console.Write(".");
+                                System.Threading.Thread.Sleep(100);
+                            }
+                            Console.Clear();
                         menu.Menu_vendedor();
                         break;
                     case 3:
-                        Console.Clear();
+                            for (int i = 0; i < 10; i++)
+                            {
+                                Console.Write(".");
+                                System.Threading.Thread.Sleep(100);
+                            }
+                            Console.Clear();
                         menu.Menu_cliente();
                         break;
                     case 4:
-                        Console.Clear();
+                            for (int i = 0; i < 10; i++)
+                            {   
+                                Console.Write(".");
+                                System.Threading.Thread.Sleep(100);
+                            }
+                            Console.Clear();
                         menu.Menu_relatorio();
                         break;
                 }
