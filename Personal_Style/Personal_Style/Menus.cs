@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 namespace Personal_Style
 {
     public class Menus
-    {
+    {    
+
+
         public void Menu_diretor()
 
         {
@@ -81,8 +83,6 @@ namespace Personal_Style
 
         }
 
-
-
         public void Menu_vendedor()
 
         {
@@ -117,5 +117,27 @@ namespace Personal_Style
 
 
         }
+
+
+
+        public void Menu_relatorio()
+
+        {    
+            Relatorio rel = new Relatorio();
+            Console.WriteLine("================================================================");
+            Console.WriteLine("           Relatorio entre clientes x vendedores                ");
+            Console.WriteLine("================================================================");
+
+            rel.relatorio();
+
+
+
+           
+
+
+        }
     }
+
+
+    
 }

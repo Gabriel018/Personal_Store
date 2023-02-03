@@ -9,15 +9,19 @@ namespace Personal_Style
 {
       public class Program
     {
-        static void Main(string[] args)
+          public static void Main()
         {
             SqlConnection sqlConnection;
-
-             string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
+             
+            
+             string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
             try
-            {
+            {   
+
+
+             
                 sqlConnection = new SqlConnection(conex);
-               sqlConnection.Open();
+                sqlConnection.Open();
                 
                 Diretor dir = new Diretor();
 
@@ -26,7 +30,7 @@ namespace Personal_Style
                 Console.WriteLine("===========================================================================");
                 Console.WriteLine("                   Bem vindo sistema Personal_style                        ");
                 Console.WriteLine("===========================================================================");
-                Console.WriteLine("1) Menu Diretor\t 2)Menu Vendedor\t 3) Menu Cliente\t 4) Relatorio de math");
+                Console.WriteLine("1) Menu Diretor \t 2)Menu Vendedor\t3) Menu Cliente \t4) Relatorio de math");
                 Console.WriteLine("");
                 Console.WriteLine("Digite o número da opção desejada: ");
                 int menuOption = Convert.ToInt32(Console.ReadLine());
@@ -49,7 +53,7 @@ namespace Personal_Style
                         break;
                     case 4:
                         Console.Clear();
-                        Console.WriteLine("Voce nao possui a opçao Premium consulte o Diego");
+                        menu.Menu_relatorio();
                         break;
                 }
             }
@@ -61,6 +65,7 @@ namespace Personal_Style
 
             }
 
+            
             Console.ReadLine();
 
         }

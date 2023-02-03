@@ -13,7 +13,7 @@ namespace Personal_Style
         {
             Menus menu = new Menus();
             SqlConnection sqlConnection;
-            string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
+            string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
             Console.WriteLine("digite  o  nome");
@@ -36,9 +36,10 @@ namespace Personal_Style
                 menu.Menu_diretor();
             }
 
-            else
+            if(n == 2)
             {
-
+                Console.Clear();
+                Program.Main();
             }
         }
 
@@ -46,7 +47,7 @@ namespace Personal_Style
         {
             Menus menu = new Menus();
             SqlConnection sqlConnection;
-            string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
+            string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
             string selecionar = "SELECT * FROM diretor;";
@@ -59,7 +60,7 @@ namespace Personal_Style
          
             }
        
-            Console.WriteLine(" 1) voltar ao  Menu Diretor\t  2) Voltar ao  Menu Inicial");
+            Console.WriteLine(" 1) voltar ao  Menu Diretor\t  2) Voltar ao Menu inicial");
             int n = int.Parse(Console.ReadLine());
 
             if (n == 1)
@@ -68,9 +69,11 @@ namespace Personal_Style
                 menu.Menu_diretor();
             }
 
-            else
-            {
 
+            if (n == 2)
+            {
+                Console.Clear();
+                Program.Main();
             }
         }
 
@@ -78,7 +81,7 @@ namespace Personal_Style
         {
             Menus menu = new Menus();
             SqlConnection sqlConnection;
-            string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
+            string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
             Console.WriteLine("Digite o id para alteraraço");
@@ -86,9 +89,9 @@ namespace Personal_Style
             Console.WriteLine("digte o nome a ser alterado");
             string nome = Console.ReadLine();
             Console.WriteLine("digte o cpf a ser alterado");
-            int cpf = int.Parse(Console.ReadLine());
+            string cpf = (Console.ReadLine());
             Console.WriteLine("digte o telefone a ser alterado");
-            int telefone = int.Parse(Console.ReadLine());
+            string telefone = (Console.ReadLine());
 
 
             string update_query = "UPDATE diretor SET nome = '" + nome + "', cpf = " + cpf + ", telefone = " + telefone + " WHERE  id = " + id + " ";
@@ -105,9 +108,10 @@ namespace Personal_Style
                 menu.Menu_diretor();
             }
 
-            else
+            if (n == 2)
             {
-
+                Console.Clear();
+                Program.Main();
             }
         }
         public void exluir ()
@@ -116,7 +120,7 @@ namespace Personal_Style
             {
                 Menus menu = new Menus();
                 SqlConnection sqlConnection;
-                string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
+                string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
                 sqlConnection = new SqlConnection(conex);
                 sqlConnection.Open();
                 Console.WriteLine("Digite o id a ser excluido");
@@ -135,9 +139,10 @@ namespace Personal_Style
                     menu.Menu_diretor();
                 }
 
-                else
+                if (n == 2)
                 {
-
+                    Console.Clear();
+                    Program.Main();
                 }
             }
             catch (Exception e)
