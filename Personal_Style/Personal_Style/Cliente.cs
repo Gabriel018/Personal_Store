@@ -14,7 +14,8 @@ namespace Personal_Style
         {
             Menus menu = new Menus();
             SqlConnection sqlConnection;
-            string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+             string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
+          // string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
             Console.WriteLine("digite seu nome");
@@ -25,12 +26,16 @@ namespace Personal_Style
             }
             Console.WriteLine("Digite seu CPF sem espaços ou traços ");
             string cpf_add = (Console.ReadLine());
+            string cpf_formatado = "";
+            cpf_formatado = cpf_add.Substring(0, 3) + "." + cpf_add.Substring(3, 3) + "." + cpf_add.Substring(6, 3) + "-" + cpf_add.Substring(9, 2);
             if (string.IsNullOrEmpty(cpf_add))
             {
                 Console.WriteLine("cpf inválido. Por favor, tente novamente.");
             }
             Console.WriteLine("digite seu telefone sem espaços ou traços ");
             string telefone_add = (Console.ReadLine());
+            string tel_formatado = "";
+            tel_formatado = "(" + telefone_add.Substring(0, 2) + ")" + telefone_add.Substring(2, 4) + "-" + telefone_add.Substring(2, 4);
             if (string.IsNullOrEmpty(telefone_add))
             {
                 Console.WriteLine("telefone inválido. Por favor, tente novamente.");
@@ -57,7 +62,7 @@ namespace Personal_Style
 
 
             string add_cliente = "INSERT INTO cliente(nome, cpf, telefone, descricao, categoria, rendimento) " +
-              "values('" + nome_add + "','" + cpf_add + "','" + telefone_add + "','" + descricao_add + "','" + categoria_add + "','" + rendimento_add + "')";
+              "values('" + nome_add + "','" + cpf_formatado + "','" + tel_formatado + "','" + descricao_add + "','" + categoria_add + "','" + rendimento_add + "')";
             SqlCommand salvar_dados = new SqlCommand(add_cliente, sqlConnection);
             salvar_dados.ExecuteNonQuery();
             Console.WriteLine("Arquivo Salvo");
@@ -96,9 +101,30 @@ namespace Personal_Style
         {
             Menus menu = new Menus();
             SqlConnection sqlConnection;
-            string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+            string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
+            //string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
+
+            string selecionar = "SELECT * FROM cliente;";
+            SqlCommand visualizar = new SqlCommand(selecionar, sqlConnection);
+            SqlDataReader dataReader = visualizar.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                Console.WriteLine("");
+                Console.WriteLine("ID: " + dataReader.GetValue(0).ToString() + "\tNome:" + dataReader.GetValue(1).ToString() + "\tCPF:" + dataReader.GetValue(2).ToString() + "\tTelefone:" + dataReader.GetValue(3).ToString());
+                Console.WriteLine("");
+                Console.WriteLine("Descriçao: " + dataReader.GetValue(4).ToString(), "Caregoria :" + dataReader.GetValue(5).ToString());
+                Console.WriteLine("Categoria: " + dataReader.GetValue(5).ToString());
+                Console.WriteLine("Rendimento: R$" + dataReader.GetValue(6));
+
+            }
+
+            sqlConnection.Close();
+            sqlConnection.Open();
+
+            Console.WriteLine("");
             Console.WriteLine("Digite o id para alteraraço");
             int id = int.Parse(Console.ReadLine());
             Console.WriteLine("digte o nome a ser alterado");
@@ -174,7 +200,8 @@ namespace Personal_Style
         {
             Menus menu = new Menus();
             SqlConnection sqlConnection;
-            string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+              string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
+            //string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
             string selecionar = "SELECT * FROM cliente;";
@@ -228,9 +255,30 @@ namespace Personal_Style
             {
                 Menus menu = new Menus();
                 SqlConnection sqlConnection;
-                string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+                  string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
+               // string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
                 sqlConnection = new SqlConnection(conex);
                 sqlConnection.Open();
+
+                string selecionar = "SELECT * FROM cliente;";
+                SqlCommand visualizar = new SqlCommand(selecionar, sqlConnection);
+                SqlDataReader dataReader = visualizar.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("ID: " + dataReader.GetValue(0).ToString() + "\tNome:" + dataReader.GetValue(1).ToString() + "\tCPF:" + dataReader.GetValue(2).ToString() + "\tTelefone:" + dataReader.GetValue(3).ToString());
+                    Console.WriteLine("");
+                    Console.WriteLine("Descriçao: " + dataReader.GetValue(4).ToString(), "Caregoria :" + dataReader.GetValue(5).ToString());
+                    Console.WriteLine("Categoria: " + dataReader.GetValue(5).ToString());
+                    Console.WriteLine("Rendimento: R$" + dataReader.GetValue(6));
+
+                }
+
+                sqlConnection.Close();
+                sqlConnection.Open();
+
+
                 Console.WriteLine("Digite o id a ser excluido");
                 int id = int.Parse(Console.ReadLine());
                 string deleteQuery = "DELETE FROM cliente WHERE  id= " + id + "";

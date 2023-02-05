@@ -15,7 +15,8 @@ namespace Personal_Style
         {
             Menus menu = new Menus();
             SqlConnection sqlConnection;
-            string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+             string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
+            //string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
             Console.WriteLine("digite  o  nome");
@@ -32,18 +33,25 @@ namespace Personal_Style
 
             Console.WriteLine("Digite CPF  sem espaços ou traços ");
             string cpf_add = (Console.ReadLine());
+            string cpf_formatado = "";
+            cpf_formatado = cpf_add.Substring(0, 3) + "." + cpf_add.Substring(3, 3) + "." + cpf_add.Substring(6, 3) + "-" + cpf_add.Substring(9, 2);
             if (string.IsNullOrEmpty(cpf_add))
             {
                 Console.WriteLine("cpf inválido. Por favor, tente novamente.");
             }
             Console.WriteLine("digite  o  telefone sem espaços ou traços ");
             string telefone_add = (Console.ReadLine());
+            string  tel_formatado = "";
+            tel_formatado =  "(" + telefone_add.Substring( 0, 2) + ")" + telefone_add.Substring(2, 4) + "-" + telefone_add.Substring(2,4);
+
             if (string.IsNullOrEmpty(telefone_add))
+             
+        
             {
                 Console.WriteLine("Telefone inválido. Por favor, tente novamente.");
             }
             string add_diretor = "INSERT INTO diretor(nome,cpf,telefone) " +
-              "values('" + nome_add + "','" + cpf_add + "','" + telefone_add + "')";
+              "values('" + nome_add + "','" + cpf_formatado + "','" + tel_formatado + "')";
             SqlCommand salvar_dados = new SqlCommand(add_diretor, sqlConnection);
             salvar_dados.ExecuteNonQuery();
             Console.WriteLine("Arquivo Salvo");
@@ -81,7 +89,8 @@ namespace Personal_Style
         {
             Menus menu = new Menus();
             SqlConnection sqlConnection;
-            string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+            string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
+           // string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
             string selecionar = "SELECT * FROM diretor;";
@@ -90,8 +99,7 @@ namespace Personal_Style
 
             while (dataReader.Read())
             {
-                Console.WriteLine("ID: " + dataReader.GetValue(0).ToString()+ "\tNome:" + dataReader.GetValue(1).ToString()+"\tCPF:" + dataReader.GetValue(2).ToString()+"\tTelefone:" + dataReader.GetValue(3).ToString());
-         
+                Console.WriteLine("ID: " + dataReader.GetValue(0).ToString() + "\tNome:" + dataReader.GetValue(1).ToString() + "\tCPF:" +  dataReader.GetValue(2).ToString() + "\tTelefone:" + dataReader.GetValue(3).ToString());
             }
        
             Console.WriteLine(" 1) voltar ao  Menu Diretor\t  2) Voltar ao Menu inicial");
@@ -130,27 +138,50 @@ namespace Personal_Style
         {
             Menus menu = new Menus();
             SqlConnection sqlConnection;
-            string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+              string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
+            //string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
+
+            Console.WriteLine("");
+            Console.WriteLine("");
+            string selecionar = "SELECT * FROM diretor;";
+            SqlCommand visualizar = new SqlCommand(selecionar, sqlConnection);
+            SqlDataReader dataReader = visualizar.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                Console.WriteLine("ID: " + dataReader.GetValue(0).ToString() + "\tNome:" + dataReader.GetValue(1).ToString() + "\tCPF:" + dataReader.GetValue(2).ToString() + "\tTelefone:" + dataReader.GetValue(3).ToString());
+
+            }
+            sqlConnection.Close();
+
             Console.WriteLine("Digite o id para alteraraço");
             int id = int.Parse(Console.ReadLine());
             Console.WriteLine("digite o nome a ser alterado");
             string nome = Console.ReadLine();
-            Console.WriteLine("digite o cpf a ser alterado");
             if (string.IsNullOrEmpty(nome))
             {
                 Console.WriteLine("Nome inválido. Por favor, tente novamente.");
             }
+
+            sqlConnection.Close();
+            sqlConnection.Open();
+
+
+            Console.WriteLine("digite o cpf a ser alterado");
             string cpf = (Console.ReadLine());
-            Console.WriteLine("digite o telefone a ser alterado");
+            string cpf_formatado = "";
+            cpf_formatado = cpf.Substring(0, 3) + "." + cpf.Substring(3, 3) + "." + cpf.Substring(6, 3) + "-" + cpf.Substring(9, 2);
             if (string.IsNullOrEmpty(cpf))
             {
                 Console.WriteLine("Cpf inválido. Por favor, tente novamente.");
             }
 
+            Console.WriteLine("digite o telefone a ser alterado");
             string telefone = (Console.ReadLine());
-
+            string tel_formatado = "";
+            tel_formatado = "(" + telefone.Substring(0, 2) + ")" + telefone.Substring(2, 4) + "-" + telefone.Substring(2, 4);
 
             string update_query = "UPDATE diretor SET nome = '" + nome + "', cpf = " + cpf + ", telefone = " + telefone + " WHERE  id = " + id + " ";
             SqlCommand updat_command = new SqlCommand(update_query, sqlConnection);
@@ -194,7 +225,8 @@ namespace Personal_Style
             {
                 Menus menu = new Menus();
                 SqlConnection sqlConnection;
-                string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+                string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
+                //string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
                 sqlConnection = new SqlConnection(conex);
                 sqlConnection.Open();
 
@@ -209,7 +241,8 @@ namespace Personal_Style
                     Console.WriteLine("ID: " + dataReader.GetValue(0).ToString() + "\tNome:" + dataReader.GetValue(1).ToString() + "\tCPF:" + dataReader.GetValue(2).ToString() + "\tTelefone:" + dataReader.GetValue(3).ToString());
 
                 }
-
+                sqlConnection.Close();
+                sqlConnection.Open();
                 Console.WriteLine("");
                 Console.WriteLine("Digite o id a ser excluido");
                 int id = int.Parse(Console.ReadLine());

@@ -12,9 +12,9 @@ namespace Personal_Style
           public static void Main()
         {
             SqlConnection sqlConnection;
-             
-            
-             string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+
+               string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
+             //string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
             try
             {   
 
