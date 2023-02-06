@@ -14,18 +14,20 @@ namespace Personal_Style
         {
             Menus menu = new Menus();
             SqlConnection sqlConnection;
-              string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
+            string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
             //string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
             Console.WriteLine("digite seu nome");
             string nome_add = Console.ReadLine();
+            Console.WriteLine("");
             if (string.IsNullOrEmpty(nome_add))
             {
                 Console.WriteLine("Nome inválido. Por favor, tente novamente.");
             }
             Console.WriteLine("Digite seu CPF:");
             string cpf_add = (Console.ReadLine());
+            Console.WriteLine("");
             string cpf_formatado = "";
             cpf_formatado = cpf_add.Substring(0, 3) + "." + cpf_add.Substring(3, 3) + "." + cpf_add.Substring(6, 3) + "-" + cpf_add.Substring(9, 2);
 
@@ -33,21 +35,24 @@ namespace Personal_Style
             {
                 Console.WriteLine("cpf inválido. Por favor, tente novamente.");
             }
-            Console.WriteLine("digite seu telefone");
+            Console.WriteLine("digite  o  telefone sem espaços ou traços ");
             string telefone_add = (Console.ReadLine());
             string tel_formatado = "";
             tel_formatado = "(" + telefone_add.Substring(0, 2) + ")" + telefone_add.Substring(2, 4) + "-" + telefone_add.Substring(2, 4);
+
+
             if (string.IsNullOrEmpty(telefone_add))
             {
                 Console.WriteLine("telefone inválido. Por favor, tente novamente.");
             }
             Console.WriteLine("descreve seu estilo ");
             string descricao_add = (Console.ReadLine());
+            Console.WriteLine("");
             if (string.IsNullOrEmpty(descricao_add))
             {
                 Console.WriteLine("campo nao pode ser  vazio. Por favor, tente novamente.");
             }
-            Console.WriteLine("digite uma dos estilos :  casual: exentrico: esportivo: criativo: urbano ");
+            Console.WriteLine("digite uma dos estilos :  casual| exentrico| esportivo| criativo| urbano ");
             string categoria_add = (Console.ReadLine());
             if (string.IsNullOrEmpty(categoria_add))
             {
@@ -57,7 +62,7 @@ namespace Personal_Style
 
 
             string add_vendedor = "INSERT INTO vendedor(nome, cpf, telefone, descricao, categoria) " +
-              "VALUES('" + nome_add + "','" + cpf_formatado + "'," + tel_formatado + ",'" + descricao_add + "','" + categoria_add + "')"; ;
+              "VALUES('" + nome_add + "','" + cpf_formatado + "','" + tel_formatado + "','" + descricao_add + "','" + categoria_add + "')"; 
             SqlCommand salvar_dados = new SqlCommand(add_vendedor, sqlConnection);
             salvar_dados.ExecuteNonQuery();
             Console.WriteLine("Arquivo Salvo");
@@ -95,6 +100,7 @@ namespace Personal_Style
         }
 
 
+
         public void editar_vendedor()
         {
             Menus menu = new Menus();
@@ -111,9 +117,11 @@ namespace Personal_Style
             while (dataReader.Read())
             {
                 Console.WriteLine("");
-                Console.WriteLine("ID: " + dataReader.GetValue(0).ToString() + "\tNome:" + dataReader.GetValue(1).ToString() + "\tCPF:" + dataReader.GetValue(2).ToString() + "\tTelefone:" + dataReader.GetValue(3).ToString());
-                Console.WriteLine("");
-                Console.WriteLine("Descriçao: " + dataReader.GetValue(4).ToString(), "Caregoria :" + dataReader.GetValue(5).ToString());
+                Console.WriteLine("ID: " + dataReader.GetValue(0).ToString());
+                Console.WriteLine("NOme: " + dataReader.GetValue(1).ToString());
+                Console.WriteLine("CPF: " + dataReader.GetValue(2).ToString());
+                Console.WriteLine("Telefone: " + dataReader.GetValue(3).ToString());
+                Console.WriteLine("Descriçao: " + dataReader.GetValue(4).ToString());
                 Console.WriteLine("Categoria: " + dataReader.GetValue(5).ToString());
 
 
@@ -131,9 +139,9 @@ namespace Personal_Style
             string nome = Console.ReadLine();
             if (string.IsNullOrEmpty(nome))
             {
-                Console.WriteLine("cpf inválido. Por favor, tente novamente.");
+                Console.WriteLine("nome invalido. Por favor, tente novamente.");
             }
-            Console.WriteLine("digte o cpf a ser alterado");
+            Console.WriteLine("digite o cpf a ser alterado");
             string cpf = (Console.ReadLine());
             if (string.IsNullOrEmpty(cpf))
             {
@@ -212,14 +220,16 @@ namespace Personal_Style
             while (dataReader.Read())
             {
                 Console.WriteLine("");
-                Console.WriteLine("ID: " + dataReader.GetValue(0).ToString() + "\tNome:" + dataReader.GetValue(1).ToString() + "\tCPF:" + dataReader.GetValue(2).ToString() + "\tTelefone:" + dataReader.GetValue(3).ToString());
-                Console.WriteLine("");
-                Console.WriteLine("Descriçao: " + dataReader.GetValue(4).ToString(), "Caregoria :" + dataReader.GetValue(5).ToString());
+                Console.WriteLine("ID: " + dataReader.GetValue(0).ToString());
+                Console.WriteLine("NOme: " + dataReader.GetValue(1).ToString());
+                Console.WriteLine("CPF: " + dataReader.GetValue(2).ToString());
+                Console.WriteLine("Telefone: " + dataReader.GetValue(3).ToString());
+                Console.WriteLine("Descriçao: " + dataReader.GetValue(4).ToString());
                 Console.WriteLine("Categoria: " + dataReader.GetValue(5).ToString());
-            
+
 
             }
-
+            Console.WriteLine("");
             Console.WriteLine(" 1) voltar ao  Menu Vendedor\t  2) Voltar ao  Menu Inicial");
             int n = int.Parse(Console.ReadLine());
 
@@ -273,10 +283,12 @@ namespace Personal_Style
                 while (dataReader.Read())
                 {
                     Console.WriteLine("");
-                    Console.WriteLine("ID: " + dataReader.GetValue(0).ToString() + "\tNome:" + dataReader.GetValue(1).ToString() + "\tCPF:" + string.Format("{0:###.###.###-##}", dataReader.GetValue(2).ToString()) + "\tTelefone:" + dataReader.GetValue(3).ToString());
-                    Console.WriteLine("Descriçao: " + dataReader.GetValue(4).ToString(), "Caregoria :" + dataReader.GetValue(5).ToString());
+                    Console.WriteLine("ID: " + dataReader.GetValue(0).ToString());
+                    Console.WriteLine("NOme: " + dataReader.GetValue(1).ToString());
+                    Console.WriteLine("CPF: " + dataReader.GetValue(2).ToString());
+                    Console.WriteLine("Telefone: " + dataReader.GetValue(3).ToString());
+                    Console.WriteLine("Descriçao: " + dataReader.GetValue(4).ToString());
                     Console.WriteLine("Categoria: " + dataReader.GetValue(5).ToString());
-
 
                 }
 

@@ -39,7 +39,9 @@ namespace Personal_Style
 
                 if (menuOption < 1 || menuOption > 4)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Opção Inválida!");
+                   
                 }
                 else
 
@@ -50,7 +52,7 @@ namespace Personal_Style
                         
                             for (int i = 0; i < 10; i++)
                             {
-                               
+                                Console.Write(".");
                                 System.Threading.Thread.Sleep(100);
                             }
                             Console.Clear();
@@ -88,7 +90,8 @@ namespace Personal_Style
 
             catch (Exception e)
             {
-                Console.WriteLine("Dados nao foram salvos", (e.Message));
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Erro verifique se digitou os dados corretos..", (e.Message));
 
 
             }

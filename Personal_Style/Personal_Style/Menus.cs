@@ -19,15 +19,18 @@ namespace Personal_Style
             Console.WriteLine("=================================");
             Console.WriteLine("           Menu Diretor          ");
             Console.WriteLine("=================================");
-            Console.WriteLine("1) Cadastrar\t 2) Editar\t  3) Excluir\t  4) Visualizar ");
+            Console.WriteLine("1)Cadastrar\t 2)Editar\t3) Excluir\t4) Visualizar\t5) Menu principal ");
+
+
             Console.WriteLine("");
             Console.WriteLine("Digite o número da opção desejada: ");
             int menuOption = Convert.ToInt32(Console.ReadLine());
 
 
 
-            if (menuOption < 1 || menuOption > 4)
+            if (menuOption < 1 || menuOption > 6)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Opção Inválida!");
             }
             else
@@ -49,7 +52,12 @@ namespace Personal_Style
                 case 4:
                     dir.visualizar();
                     break;
-            }
+                
+                case 5:
+                        Console.Clear();
+                     Program.Main();
+                     break;
+                }
 
 
         }
@@ -65,7 +73,7 @@ namespace Personal_Style
             Console.WriteLine("================================================================");
             Console.WriteLine("           Menu Cliente                                         ");
             Console.WriteLine("================================================================");
-            Console.WriteLine("1) Cadastrar\t 2) Editar\t  3) Excluir\t  4) Visualizar ");
+            Console.WriteLine("1)Cadastrar\t 2)Editar\t3) Excluir\t4) Visualizar\t5) Menu principal ");
             Console.WriteLine("");
             Console.WriteLine("Digite o número da opção desejada: ");
             int menuOption = Convert.ToInt32(Console.ReadLine());
@@ -73,8 +81,9 @@ namespace Personal_Style
 
 
 
-            if (menuOption < 1 || menuOption > 4)
+            if (menuOption < 1 || menuOption > 6)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Opção Inválida!");
             }
             else
@@ -96,6 +105,12 @@ namespace Personal_Style
                 case 4:
                     cliente.visualizar_cliente();
                     break;
+                case 5: 
+                    Console.Clear();
+                    Program.Main();
+                            break;
+
+
             }
 
         }
@@ -110,7 +125,9 @@ namespace Personal_Style
             Console.WriteLine("================================================================");
             Console.WriteLine("           Menu Vendedor                                       ");
             Console.WriteLine("================================================================");
-            Console.WriteLine("1) Cadastrar\t 2) Editar\t  3) Excluir\t  4) Visualizar ");
+            Console.WriteLine("");
+            Console.WriteLine("1)Cadastrar\t 2)Editar\t3) Excluir\t4) Visualizar\t5) Menu principal ");
+
             Console.WriteLine("");
             Console.WriteLine("Digite o número da opção desejada: ");
             int menuOption = Convert.ToInt32(Console.ReadLine());
@@ -118,8 +135,9 @@ namespace Personal_Style
 
 
 
-            if (menuOption < 1 || menuOption > 4)
+            if (menuOption < 1 || menuOption > 6 )
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Opção Inválida!");
             }
             else
@@ -139,6 +157,10 @@ namespace Personal_Style
                         break;
                     case 4:
                         vendedor.visualizar_vendedor();
+                        break;
+                        case 5:
+                        Console.Clear();
+                        Program.Main();
                         break;
                 }
 

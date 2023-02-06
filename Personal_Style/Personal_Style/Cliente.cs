@@ -20,19 +20,24 @@ namespace Personal_Style
             sqlConnection.Open();
             Console.WriteLine("digite seu nome");
             string nome_add = Console.ReadLine();
+            Console.WriteLine("");
             if (string.IsNullOrEmpty(nome_add))
             {
                 Console.WriteLine("nome inválido. Por favor, tente novamente.");
             }
             Console.WriteLine("Digite seu CPF sem espaços ou traços ");
+            Console.WriteLine("");
             string cpf_add = (Console.ReadLine());
+            Console.WriteLine("");
             string cpf_formatado = "";
             cpf_formatado = cpf_add.Substring(0, 3) + "." + cpf_add.Substring(3, 3) + "." + cpf_add.Substring(6, 3) + "-" + cpf_add.Substring(9, 2);
             if (string.IsNullOrEmpty(cpf_add))
             {
                 Console.WriteLine("cpf inválido. Por favor, tente novamente.");
             }
+            Console.WriteLine("");
             Console.WriteLine("digite seu telefone sem espaços ou traços ");
+            Console.WriteLine("");
             string telefone_add = (Console.ReadLine());
             string tel_formatado = "";
             tel_formatado = "(" + telefone_add.Substring(0, 2) + ")" + telefone_add.Substring(2, 4) + "-" + telefone_add.Substring(2, 4);
@@ -40,25 +45,25 @@ namespace Personal_Style
             {
                 Console.WriteLine("telefone inválido. Por favor, tente novamente.");
             }
+            Console.WriteLine("");
             Console.WriteLine("descreve seu estilo");
+             Console.WriteLine("");
             string descricao_add = (Console.ReadLine());
             if (string.IsNullOrEmpty(descricao_add))
             {
                 Console.WriteLine("descricao inválida. Por favor, tente novamente.");
             }
-            Console.WriteLine("digite uma dos estilos :  casual: exentrico: esportivo: criativo: urbano ");
+            Console.WriteLine("");
+            Console.WriteLine("digite uma dos estilos :  casual| exentrico| esportivo| criativo| urbano ");
             string categoria_add = (Console.ReadLine());
-            if (string.IsNullOrEmpty(cpf_add))
+            if (string.IsNullOrEmpty(categoria_add))
             {
                 Console.WriteLine("cpf inválido. Por favor, tente novamente.");
             }
 
             Console.WriteLine("qual seu rendimento?");
             decimal rendimento_add = decimal.Parse(Console.ReadLine());
-            if (string.IsNullOrEmpty(cpf_add))
-            {
-                Console.WriteLine("valor inválido. Por favor, tente novamente.");
-            }
+           
 
 
             string add_cliente = "INSERT INTO cliente(nome, cpf, telefone, descricao, categoria, rendimento) " +
@@ -66,7 +71,7 @@ namespace Personal_Style
             SqlCommand salvar_dados = new SqlCommand(add_cliente, sqlConnection);
             salvar_dados.ExecuteNonQuery();
             Console.WriteLine("Arquivo Salvo");
-            Console.WriteLine(" 1) voltar ao  Menu Vendedor\t  2) Voltar ao  Menu Inicial");
+            Console.WriteLine(" 1) voltar ao  Menu Cliente\t  2) Voltar ao  Menu Inicial");
             int n = int.Parse(Console.ReadLine());
 
 
@@ -113,11 +118,12 @@ namespace Personal_Style
             while (dataReader.Read())
             {
                 Console.WriteLine("");
-                Console.WriteLine("ID: " + dataReader.GetValue(0).ToString() + "\tNome:" + dataReader.GetValue(1).ToString() + "\tCPF:" + dataReader.GetValue(2).ToString() + "\tTelefone:" + dataReader.GetValue(3).ToString());
-                Console.WriteLine("");
-                Console.WriteLine("Descriçao: " + dataReader.GetValue(4).ToString(), "Caregoria :" + dataReader.GetValue(5).ToString());
+                Console.WriteLine("ID: " + dataReader.GetValue(0).ToString());
+                Console.WriteLine("NOme: " + dataReader.GetValue(1).ToString());
+                Console.WriteLine("CPF: " + dataReader.GetValue(2).ToString());
+                Console.WriteLine("Telefone: " + dataReader.GetValue(3).ToString());
+                Console.WriteLine("Descriçao: " + dataReader.GetValue(4).ToString());
                 Console.WriteLine("Categoria: " + dataReader.GetValue(5).ToString());
-                Console.WriteLine("Rendimento: R$" + dataReader.GetValue(6));
 
             }
 
@@ -211,11 +217,12 @@ namespace Personal_Style
             while (dataReader.Read())
             {
                 Console.WriteLine("");
-                Console.WriteLine("ID: " + dataReader.GetValue(0).ToString() + "\tNome:" + dataReader.GetValue(1).ToString() + "\tCPF:" + dataReader.GetValue(2).ToString() + "\tTelefone:" + dataReader.GetValue(3).ToString());
-                Console.WriteLine("");
-                Console.WriteLine("Descriçao: " + dataReader.GetValue(4).ToString(),"Caregoria :" +dataReader.GetValue(5).ToString());
+                Console.WriteLine("ID: " + dataReader.GetValue(0).ToString());
+                Console.WriteLine("NOme: " + dataReader.GetValue(1).ToString());
+                Console.WriteLine("CPF: " + dataReader.GetValue(2).ToString());
+                Console.WriteLine("Telefone: " + dataReader.GetValue(3).ToString());
+                Console.WriteLine("Descriçao: " + dataReader.GetValue(4).ToString());
                 Console.WriteLine("Categoria: " + dataReader.GetValue(5).ToString());
-                Console.WriteLine("Rendimento: R$" + dataReader.GetValue(6));
 
             }
             Console.WriteLine("");
@@ -267,11 +274,12 @@ namespace Personal_Style
                 while (dataReader.Read())
                 {
                     Console.WriteLine("");
-                    Console.WriteLine("ID: " + dataReader.GetValue(0).ToString() + "\tNome:" + dataReader.GetValue(1).ToString() + "\tCPF:" + dataReader.GetValue(2).ToString() + "\tTelefone:" + dataReader.GetValue(3).ToString());
-                    Console.WriteLine("");
-                    Console.WriteLine("Descriçao: " + dataReader.GetValue(4).ToString(), "Caregoria :" + dataReader.GetValue(5).ToString());
+                    Console.WriteLine("ID: " + dataReader.GetValue(0).ToString());
+                    Console.WriteLine("NOme: " + dataReader.GetValue(1).ToString());
+                    Console.WriteLine("CPF: " + dataReader.GetValue(2).ToString());
+                    Console.WriteLine("Telefone: " + dataReader.GetValue(3).ToString());
+                    Console.WriteLine("Descriçao: " + dataReader.GetValue(4).ToString());
                     Console.WriteLine("Categoria: " + dataReader.GetValue(5).ToString());
-                    Console.WriteLine("Rendimento: R$" + dataReader.GetValue(6));
 
                 }
 

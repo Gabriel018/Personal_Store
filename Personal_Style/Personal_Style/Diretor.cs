@@ -22,6 +22,7 @@ namespace Personal_Style
             Console.WriteLine("digite  o  nome");
 
             string nome_add = Console.ReadLine();
+            Console.WriteLine("");
             if (string.IsNullOrEmpty(nome_add))
             {
                 Console.WriteLine("Nome inválido. Por favor, tente novamente.");
@@ -31,8 +32,9 @@ namespace Personal_Style
                 Console.WriteLine("Valor digitado invalido");
             }
 
-            Console.WriteLine("Digite CPF  sem espaços ou traços ");
+            Console.WriteLine("Digite o  CPF  sem espaços ou traços ");
             string cpf_add = (Console.ReadLine());
+            Console.WriteLine("");
             string cpf_formatado = "";
             cpf_formatado = cpf_add.Substring(0, 3) + "." + cpf_add.Substring(3, 3) + "." + cpf_add.Substring(6, 3) + "-" + cpf_add.Substring(9, 2);
             if (string.IsNullOrEmpty(cpf_add))
@@ -54,12 +56,15 @@ namespace Personal_Style
               "values('" + nome_add + "','" + cpf_formatado + "','" + tel_formatado + "')";
             SqlCommand salvar_dados = new SqlCommand(add_diretor, sqlConnection);
             salvar_dados.ExecuteNonQuery();
-            Console.WriteLine("Arquivo Salvo");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("Arquivo Salvo");
+            Console.WriteLine("");
             Console.WriteLine(" 1) voltar ao  Menu Diretor\t  2) Voltar ao  Menu Inicial");
             int n =  int.Parse(Console.ReadLine());
 
             if ( n < 1 || n > 4)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Opção Inválida!");
             }
             else
@@ -99,7 +104,13 @@ namespace Personal_Style
 
             while (dataReader.Read())
             {
-                Console.WriteLine("ID: " + dataReader.GetValue(0).ToString() + "\tNome:" + dataReader.GetValue(1).ToString() + "\tCPF:" +  dataReader.GetValue(2).ToString() + "\tTelefone:" + dataReader.GetValue(3).ToString());
+                Console.WriteLine("");
+                Console.WriteLine("ID: " + dataReader.GetValue(0).ToString());
+                Console.WriteLine("NOme: " +dataReader.GetValue(1).ToString());
+                Console.WriteLine("CPF: " + dataReader.GetValue(2).ToString());
+                Console.WriteLine("Telefone: " + dataReader.GetValue(3).ToString());
+
+
             }
        
             Console.WriteLine(" 1) voltar ao  Menu Diretor\t  2) Voltar ao Menu inicial");
@@ -108,6 +119,7 @@ namespace Personal_Style
 
             if (n < 1 || n > 4)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Opção Inválida!");
             }
             else
@@ -151,7 +163,11 @@ namespace Personal_Style
 
             while (dataReader.Read())
             {
-                Console.WriteLine("ID: " + dataReader.GetValue(0).ToString() + "\tNome:" + dataReader.GetValue(1).ToString() + "\tCPF:" + dataReader.GetValue(2).ToString() + "\tTelefone:" + dataReader.GetValue(3).ToString());
+                Console.WriteLine("");
+                Console.WriteLine("ID: " + dataReader.GetValue(0).ToString());
+                Console.WriteLine("NOme: " + dataReader.GetValue(1).ToString());
+                Console.WriteLine("CPF: " + dataReader.GetValue(2).ToString());
+                Console.WriteLine("Telefone: " + dataReader.GetValue(3).ToString());
 
             }
             sqlConnection.Close();
@@ -159,8 +175,8 @@ namespace Personal_Style
             Console.WriteLine("Digite o id para alteraraço");
             int id = int.Parse(Console.ReadLine());
             Console.WriteLine("digite o nome a ser alterado");
-            string nome = Console.ReadLine();
-            if (string.IsNullOrEmpty(nome))
+            string nome_add = Console.ReadLine();
+            if (string.IsNullOrEmpty(nome_add))
             {
                 Console.WriteLine("Nome inválido. Por favor, tente novamente.");
             }
@@ -170,22 +186,23 @@ namespace Personal_Style
 
 
             Console.WriteLine("digite o cpf a ser alterado");
-            string cpf = (Console.ReadLine());
+            string cpf_add = (Console.ReadLine());
             string cpf_formatado = "";
-            cpf_formatado = cpf.Substring(0, 3) + "." + cpf.Substring(3, 3) + "." + cpf.Substring(6, 3) + "-" + cpf.Substring(9, 2);
-            if (string.IsNullOrEmpty(cpf))
+            cpf_formatado = cpf_add.Substring(0, 3) + "." + cpf_add.Substring(3, 3) + "." + cpf_add.Substring(6, 3) + "-" + cpf_add.Substring(9, 2);
+            if (string.IsNullOrEmpty(cpf_add))
             {
                 Console.WriteLine("Cpf inválido. Por favor, tente novamente.");
             }
 
             Console.WriteLine("digite o telefone a ser alterado");
-            string telefone = (Console.ReadLine());
+            string telefone_add = (Console.ReadLine());
             string tel_formatado = "";
-            tel_formatado = "(" + telefone.Substring(0, 2) + ")" + telefone.Substring(2, 4) + "-" + telefone.Substring(2, 4);
+            tel_formatado = "(" + telefone_add.Substring(0, 2) + ")" + telefone_add.Substring(2, 4) + "-" + telefone_add.Substring(2, 4);
 
-            string update_query = "UPDATE diretor SET nome = '" + nome + "', cpf = " + cpf + ", telefone = " + telefone + " WHERE  id = " + id + " ";
+            string update_query = "UPDATE diretor SET nome = '" + nome_add + "', cpf = '" + cpf_add + "', telefone = '" + telefone_add + "' WHERE  id = " + id + " ";
             SqlCommand updat_command = new SqlCommand(update_query, sqlConnection);
             updat_command.ExecuteNonQuery();
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Dados alterados");
             Console.WriteLine("");
             Console.WriteLine(" 1) voltar ao  Menu Diretor\t  2) Voltar ao  Menu Inicial");
@@ -195,6 +212,7 @@ namespace Personal_Style
 
             if (n < 1 || n > 4)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Opção Inválida!");
             }
             else
@@ -238,7 +256,12 @@ namespace Personal_Style
 
                 while (dataReader.Read())
                 {
-                    Console.WriteLine("ID: " + dataReader.GetValue(0).ToString() + "\tNome:" + dataReader.GetValue(1).ToString() + "\tCPF:" + dataReader.GetValue(2).ToString() + "\tTelefone:" + dataReader.GetValue(3).ToString());
+                    Console.WriteLine("");
+                    Console.WriteLine("ID: " + dataReader.GetValue(0).ToString());
+                    Console.WriteLine("NOme: " + dataReader.GetValue(1).ToString());
+                    Console.WriteLine("CPF: " + dataReader.GetValue(2).ToString());
+                    Console.WriteLine("Telefone: " + dataReader.GetValue(3).ToString());
+                  
 
                 }
                 sqlConnection.Close();
@@ -250,6 +273,7 @@ namespace Personal_Style
                 string deleteQuery = "DELETE FROM diretor WHERE  id= " + id + "";
                 SqlCommand deletecmd = new SqlCommand(deleteQuery, sqlConnection);
                 deletecmd.ExecuteNonQuery();
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Usuario excluido com sucesso");
 
                 Console.WriteLine(" 1) voltar ao  Menu Diretor\t  2) Voltar ao  Menu Inicial");
@@ -258,6 +282,7 @@ namespace Personal_Style
 
                 if (n < 1 || n > 4)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Opção Inválida!");
                 }
                 else
