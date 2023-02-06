@@ -15,10 +15,19 @@ namespace Personal_Style
         {
 
             Diretor dir = new Diretor();
-
-            Console.WriteLine("=================================");
-            Console.WriteLine("           Menu Diretor          ");
-            Console.WriteLine("=================================");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("|===========================================================================================|");
+            Console.WriteLine("|                                                                                           |");
+            Console.WriteLine("|                                                                                           |");
+            Console.WriteLine("|                                                                                           |");
+            Console.WriteLine("|                                                                                           |");
+            Console.WriteLine("|                                 MENU DIRETOR                                              |");
+            Console.WriteLine("|                                                                                           |");
+            Console.WriteLine("|                                                                                           |");
+            Console.WriteLine("|                                                                                           |");
+            Console.WriteLine("|                                                                                           |");
+            Console.WriteLine("|===========================================================================================|");
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("1)Cadastrar\t 2)Editar\t3) Excluir\t4) Visualizar\t5) Menu principal ");
 
 
@@ -69,10 +78,19 @@ namespace Personal_Style
 
             Cliente cliente = new Cliente();
 
-
-            Console.WriteLine("================================================================");
-            Console.WriteLine("           Menu Cliente                                         ");
-            Console.WriteLine("================================================================");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("============================================================================================");
+            Console.WriteLine("                                                                                           |");
+            Console.WriteLine("                                                                                           |");
+            Console.WriteLine("                                                                                           |");
+            Console.WriteLine("                                                                                           |");
+            Console.WriteLine("                                    MENU CLIENTE                                           |");
+            Console.WriteLine("                                                                                           |");
+            Console.WriteLine("                                                                                           |");
+            Console.WriteLine("                                                                                           |");
+            Console.WriteLine("                                                                                           |");
+            Console.WriteLine("============================================================================================");
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("1)Cadastrar\t 2)Editar\t3) Excluir\t4) Visualizar\t5) Menu principal ");
             Console.WriteLine("");
             Console.WriteLine("Digite o número da opção desejada: ");
@@ -121,11 +139,19 @@ namespace Personal_Style
 
             Vendedor vendedor = new Vendedor();
 
-
-            Console.WriteLine("================================================================");
-            Console.WriteLine("           Menu Vendedor                                       ");
-            Console.WriteLine("================================================================");
-            Console.WriteLine("");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("|===========================================================================================|");
+            Console.WriteLine("|                                                                                           |");
+            Console.WriteLine("|                                                                                           |");
+            Console.WriteLine("|                                                                                           |");
+            Console.WriteLine("|                                                                                           |");
+            Console.WriteLine("|                                 MENU VENDEDOR                                             |");
+            Console.WriteLine("|                                                                                           |");
+            Console.WriteLine("|                                                                                           |");
+            Console.WriteLine("|                                                                                           |");
+            Console.WriteLine("|                                                                                           |");
+            Console.WriteLine("|===========================================================================================|");
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("1)Cadastrar\t 2)Editar\t3) Excluir\t4) Visualizar\t5) Menu principal ");
 
             Console.WriteLine("");
@@ -177,9 +203,18 @@ namespace Personal_Style
 
         {    
             Relatorio rel = new Relatorio();
-            Console.WriteLine("================================================================");
-            Console.WriteLine("           Relatorio entre clientes x vendedores                ");
-            Console.WriteLine("================================================================");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("|===========================================================================================|");
+            Console.WriteLine("|                                                                                           |");
+            Console.WriteLine("|                                                                                           |");
+            Console.WriteLine("|                                                                                           |");
+            Console.WriteLine("|                                                                                           |");
+            Console.WriteLine("|                                 RELATORIOS                                                |");
+            Console.WriteLine("|                                                                                           |");
+            Console.WriteLine("|                                                                                           |");
+            Console.WriteLine("|                                                                                           |");
+            Console.WriteLine("|                                                                                           |");
+            Console.WriteLine("|===========================================================================================|"); 
 
             rel.relatorio();
 

@@ -25,12 +25,20 @@ namespace Personal_Style
                 Diretor dir = new Diretor();
                
                 Menus menu = new Menus();
-                Console.ForegroundColor = ConsoleColor.Cyan;
-               
-                Console.WriteLine("===========================================================================");
-                Console.WriteLine("                  BEM VINDO AO PERSONAL STYLE                              ");
-                Console.WriteLine("===========================================================================");
-;
+                Console.ForegroundColor = ConsoleColor.Blue;
+
+                Console.WriteLine("|===========================================================================================|");
+                Console.WriteLine("|                                                                                           |");
+                Console.WriteLine("|                                                                                           |");
+                Console.WriteLine("|                                                                                           |");
+                Console.WriteLine("|                                                                                           |");
+                Console.WriteLine("|                                 MENU VENDEDOR                                             |");
+                Console.WriteLine("|                                                                                           |");
+                Console.WriteLine("|                                                                                           |");
+                Console.WriteLine("|                                                                                           |");
+                Console.WriteLine("|                                                                                           |");
+                Console.WriteLine("|===========================================================================================|");
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
                 Console.WriteLine("1) Menu Diretor \t 2)Menu Vendedor\t3) Menu Cliente \t4) Relatorio de Math");
                 Console.WriteLine("");
                 Console.WriteLine("Digite o número da opção desejada: ");

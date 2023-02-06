@@ -70,13 +70,15 @@ namespace Personal_Style
               "values('" + nome_add + "','" + cpf_formatado + "','" + tel_formatado + "','" + descricao_add + "','" + categoria_add + "','" + rendimento_add + "')";
             SqlCommand salvar_dados = new SqlCommand(add_cliente, sqlConnection);
             salvar_dados.ExecuteNonQuery();
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Arquivo Salvo");
             Console.WriteLine(" 1) voltar ao  Menu Cliente\t  2) Voltar ao  Menu Inicial");
             int n = int.Parse(Console.ReadLine());
 
 
-            if (n < 1 || n > 4)
+            if (n < 1 || n > 2)
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Opção Inválida!");
             }
             else
@@ -169,14 +171,16 @@ namespace Personal_Style
             string update_query = "UPDATE cliente SET nome = '" + nome + "', cpf = " + cpf + ", telefone = '" + telefone + "', descricao ='" + descricao_add + "', categoria ='" + categoria_add + "', rendimento =" + rendimento_add + " WHERE  id = " + id + " ";
             SqlCommand updat_command = new SqlCommand(update_query, sqlConnection);
             updat_command.ExecuteNonQuery();
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("os dados foram alterador");
 
             Console.WriteLine(" 1) voltar ao  Menu Vendedor\t  2) Voltar ao  Menu Inicial");
             int n = int.Parse(Console.ReadLine());
 
 
-            if (n < 1 || n > 4)
+            if (n < 1 || n > 2)
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Opção Inválida!");
             }
             else
@@ -292,14 +296,16 @@ namespace Personal_Style
                 string deleteQuery = "DELETE FROM cliente WHERE  id= " + id + "";
                 SqlCommand deletecmd = new SqlCommand(deleteQuery, sqlConnection);
                 deletecmd.ExecuteNonQuery();
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Usuario excluido com sucesso");
 
                 Console.WriteLine(" 1) voltar ao  Menu Cliente\t  2) Voltar ao  Menu Inicial");
                 int n = int.Parse(Console.ReadLine());
 
 
-                if (n < 1 || n > 4)
+                if (n < 1 || n > 2)
                 {
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Opção Inválida!");
                 }
                 else

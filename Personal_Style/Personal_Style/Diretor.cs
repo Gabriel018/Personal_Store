@@ -62,7 +62,7 @@ namespace Personal_Style
             Console.WriteLine(" 1) voltar ao  Menu Diretor\t  2) Voltar ao  Menu Inicial");
             int n =  int.Parse(Console.ReadLine());
 
-            if ( n < 1 || n > 4)
+            if ( n < 1 || n > 2)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Opção Inválida!");
@@ -117,7 +117,7 @@ namespace Personal_Style
             int n = int.Parse(Console.ReadLine());
 
 
-            if (n < 1 || n > 4)
+            if (n < 1 || n > 2)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Opção Inválida!");
@@ -210,7 +210,7 @@ namespace Personal_Style
 
 
 
-            if (n < 1 || n > 4)
+            if (n < 1 || n > 2)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Opção Inválida!");
@@ -280,7 +280,7 @@ namespace Personal_Style
                 int n = int.Parse(Console.ReadLine());
 
 
-                if (n < 1 || n > 4)
+                if (n < 1 || n > 2)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Opção Inválida!");

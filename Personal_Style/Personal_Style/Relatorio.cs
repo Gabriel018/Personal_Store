@@ -17,6 +17,9 @@ namespace Personal_Style
             //string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
+            Console.Write(".");
+            System.Threading.Thread.Sleep(300);
+            Console.WriteLine("");
             Console.WriteLine("Math encontrados!!!");
 
             string selecionar = "SELECT * FROM vendedor INNER JOIN cliente ON cliente.categoria = vendedor.categoria";
