@@ -136,6 +136,14 @@ namespace Personal_Style
             Console.WriteLine("");
             Console.WriteLine("Digite o id para alteraraço");
             int id = int.Parse(Console.ReadLine());
+
+
+
+
+
+
+
+
             
             Console.WriteLine("digte o nome a ser alterado");
             string nome = Console.ReadLine();
