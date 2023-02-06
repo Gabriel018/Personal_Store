@@ -15,7 +15,7 @@ namespace Personal_Style
         {
 
             Diretor dir = new Diretor();
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("|===========================================================================================|");
             Console.WriteLine("|                                                                                           |");
             Console.WriteLine("|                                                                                           |");
@@ -27,7 +27,7 @@ namespace Personal_Style
             Console.WriteLine("|                                                                                           |");
             Console.WriteLine("|                                                                                           |");
             Console.WriteLine("|===========================================================================================|");
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("1)Cadastrar\t 2)Editar\t3) Excluir\t4) Visualizar\t5) Menu principal ");
 
 
@@ -78,7 +78,7 @@ namespace Personal_Style
 
             Cliente cliente = new Cliente();
 
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("============================================================================================");
             Console.WriteLine("                                                                                           |");
             Console.WriteLine("                                                                                           |");
@@ -90,7 +90,7 @@ namespace Personal_Style
             Console.WriteLine("                                                                                           |");
             Console.WriteLine("                                                                                           |");
             Console.WriteLine("============================================================================================");
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("1)Cadastrar\t 2)Editar\t3) Excluir\t4) Visualizar\t5) Menu principal ");
             Console.WriteLine("");
             Console.WriteLine("Digite o número da opção desejada: ");
@@ -139,7 +139,7 @@ namespace Personal_Style
 
             Vendedor vendedor = new Vendedor();
 
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("|===========================================================================================|");
             Console.WriteLine("|                                                                                           |");
             Console.WriteLine("|                                                                                           |");
@@ -151,7 +151,7 @@ namespace Personal_Style
             Console.WriteLine("|                                                                                           |");
             Console.WriteLine("|                                                                                           |");
             Console.WriteLine("|===========================================================================================|");
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("1)Cadastrar\t 2)Editar\t3) Excluir\t4) Visualizar\t5) Menu principal ");
 
             Console.WriteLine("");
@@ -203,7 +203,7 @@ namespace Personal_Style
 
         {    
             Relatorio rel = new Relatorio();
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("|===========================================================================================|");
             Console.WriteLine("|                                                                                           |");
             Console.WriteLine("|                                                                                           |");
@@ -214,8 +214,8 @@ namespace Personal_Style
             Console.WriteLine("|                                                                                           |");
             Console.WriteLine("|                                                                                           |");
             Console.WriteLine("|                                                                                           |");
-            Console.WriteLine("|===========================================================================================|"); 
-
+            Console.WriteLine("|===========================================================================================|");
+            Console.ForegroundColor = ConsoleColor.Green;
             rel.relatorio();
 
 

@@ -15,8 +15,8 @@ namespace Personal_Style
         {
             Menus menu = new Menus();
             SqlConnection sqlConnection;
-             string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
-            //string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+            
+            string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
             Console.WriteLine("digite  o  nome");
@@ -94,8 +94,8 @@ namespace Personal_Style
         {
             Menus menu = new Menus();
             SqlConnection sqlConnection;
-            string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
-           // string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+            
+            string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
             string selecionar = "SELECT * FROM diretor;";
@@ -150,8 +150,8 @@ namespace Personal_Style
         {
             Menus menu = new Menus();
             SqlConnection sqlConnection;
-              string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
-            //string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+              
+            string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
 
@@ -243,8 +243,8 @@ namespace Personal_Style
             {
                 Menus menu = new Menus();
                 SqlConnection sqlConnection;
-                string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
-                //string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+                
+                string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
                 sqlConnection = new SqlConnection(conex);
                 sqlConnection.Open();
 

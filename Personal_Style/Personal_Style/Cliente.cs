@@ -14,8 +14,8 @@ namespace Personal_Style
         {
             Menus menu = new Menus();
             SqlConnection sqlConnection;
-             string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
-          // string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+             
+            string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
             Console.WriteLine("digite seu nome");
@@ -78,7 +78,7 @@ namespace Personal_Style
 
             if (n < 1 || n > 2)
             {
-                Console.ForegroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Opção Inválida!");
             }
             else
@@ -108,8 +108,8 @@ namespace Personal_Style
         {
             Menus menu = new Menus();
             SqlConnection sqlConnection;
-            string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
-            //string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+            
+            string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
 
@@ -180,7 +180,7 @@ namespace Personal_Style
 
             if (n < 1 || n > 2)
             {
-                Console.ForegroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Opção Inválida!");
             }
             else
@@ -210,8 +210,8 @@ namespace Personal_Style
         {
             Menus menu = new Menus();
             SqlConnection sqlConnection;
-              string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
-            //string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+              
+            string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
             string selecionar = "SELECT * FROM cliente;";
@@ -266,8 +266,8 @@ namespace Personal_Style
             {
                 Menus menu = new Menus();
                 SqlConnection sqlConnection;
-                  string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
-               // string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+                 
+                string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
                 sqlConnection = new SqlConnection(conex);
                 sqlConnection.Open();
 
@@ -296,7 +296,7 @@ namespace Personal_Style
                 string deleteQuery = "DELETE FROM cliente WHERE  id= " + id + "";
                 SqlCommand deletecmd = new SqlCommand(deleteQuery, sqlConnection);
                 deletecmd.ExecuteNonQuery();
-                Console.ForegroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Usuario excluido com sucesso");
 
                 Console.WriteLine(" 1) voltar ao  Menu Cliente\t  2) Voltar ao  Menu Inicial");
@@ -305,7 +305,7 @@ namespace Personal_Style
 
                 if (n < 1 || n > 2)
                 {
-                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Opção Inválida!");
                 }
                 else

@@ -13,8 +13,8 @@ namespace Personal_Style
         {
             Menus menu = new Menus();
             SqlConnection sqlConnection;
-              string conex = @"Data Source=DUKE\SQLEXPRESS;Initial Catalog=Personal_style;Integrated Security=True";
-            //string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
+             
+            string conex = @"Data Source=DESKTOP-NG41UBG;Initial Catalog=Personal_Style;Integrated Security=True";
             sqlConnection = new SqlConnection(conex);
             sqlConnection.Open();
             Console.Write(".");
@@ -32,11 +32,14 @@ namespace Personal_Style
             {
               
           
-                Console.WriteLine("Vendedor :"+dataReader.GetValue(1).ToString());
-                Console.WriteLine("Cliente  : " + dataReader.GetValue(7).ToString());
+                Console.WriteLine("Vendedor :"+dataReader.GetValue(1).ToString(), "Telefone : " + dataReader.GetValue(3).ToString());
+                Console.WriteLine("Telefone: " + dataReader.GetValue(3).ToString());
+      
+                Console.WriteLine("Cliente  : " + dataReader.GetValue(7).ToString(), "Telefone : " + dataReader.GetValue(9).ToString());
+                Console.WriteLine("Telefone: " + dataReader.GetValue(9).ToString());
                 Console.WriteLine("Categoria : "  +dataReader.GetValue(5).ToString());
-                Console.WriteLine("");
 
+                Console.WriteLine("");
 
             }
             Console.WriteLine(" 1) Voltar ao Menu inicial");
