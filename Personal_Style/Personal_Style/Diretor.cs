@@ -104,12 +104,12 @@ namespace Personal_Style
 
             while (dataReader.Read())
             {
+
                 Console.WriteLine("");
                 Console.WriteLine("ID: " + dataReader.GetValue(0).ToString());
                 Console.WriteLine("NOme: " +dataReader.GetValue(1).ToString());
                 Console.WriteLine("CPF: " + dataReader.GetValue(2).ToString());
                 Console.WriteLine("Telefone: " + dataReader.GetValue(3).ToString());
-
 
             }
        
@@ -161,6 +161,7 @@ namespace Personal_Style
             SqlCommand visualizar = new SqlCommand(selecionar, sqlConnection);
             SqlDataReader dataReader = visualizar.ExecuteReader();
 
+
             while (dataReader.Read())
             {
                 Console.WriteLine("");
@@ -175,6 +176,7 @@ namespace Personal_Style
             Console.WriteLine("Digite o id para alteraraço");
             int id = int.Parse(Console.ReadLine());
             Console.WriteLine("digite o nome a ser alterado");
+
             string nome_add = Console.ReadLine();
             if (string.IsNullOrEmpty(nome_add))
             {

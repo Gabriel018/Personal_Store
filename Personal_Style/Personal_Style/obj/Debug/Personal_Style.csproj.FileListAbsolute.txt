@@ -13,3 +13,4 @@ C:\Users\Duke\Desktop\Personal_Store\Personal_Style\Personal_Style\obj\Debug\Per
 C:\Users\Duke\Desktop\Personal_Store\Personal_Style\Personal_Style\obj\Debug\Personal_Style.csproj.CoreCompileInputs.cache
 C:\Users\Duke\Desktop\Personal_Store\Personal_Style\Personal_Style\obj\Debug\Personal_Style.exe
 C:\Users\Duke\Desktop\Personal_Store\Personal_Style\Personal_Style\obj\Debug\Personal_Style.pdb
+C:\Users\Usuario\Desktop\Personal_Store\Personal_Style\Personal_Style\obj\Debug\Personal_Style.csproj.SuggestedBindingRedirects.cache
